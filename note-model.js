@@ -1,10 +1,10 @@
-(function(exports){
-  function Notes (text){
+(function (exports) {
+  function Note(text) {
     this.text = text;
   };
-  Notes.prototype.returnText = function(){
-      return this.text
-      console.log("hello")
+
+  Note.prototype.returnText = function () {
+    return this.text
   }
-  exports.Notes = Notes;
+  exports.Note = Note;
 })(this)

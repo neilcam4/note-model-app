@@ -1,14 +1,19 @@
-var note = new Notes("My favourite language is JavaScript");
-function checkNewNoteInstantiated (){
+
+var note = new Note("My favourite language is JavaScript");
+function checkNewNoteInstantiated() {
+  nameOfFunc = arguments.callee.toString().match(/function\s+([^\s\(]+)/);
+
   let expectation = "My favourite language is JavaScript";
   let actual = note.text
-  assert.isTrue(actual===expectation, actual, expectation);
+  assert.isTrue(actual === expectation, nameOfFunc[1]);
 }
 checkNewNoteInstantiated()
 
-function checkReturnText (){
+function checkReturnText() {
+  nameOfFunc = arguments.callee.toString().match(/function\s+([^\s\(]+)/);
+
   let expectation = "My favourite language is JavaScript";
-  let actual =  note.returnText()
-  assert.isTrue(actual===expectation,actual, expectation);
+  let actual = note.returnText()
+  assert.isTrue(actual === expectation, nameOfFunc[1]);
 }
 checkReturnText()
