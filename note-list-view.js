@@ -1,20 +1,20 @@
 (function (exports){
-  function NoteListView(){
-
+  function NoteListView(noteList){
+    this.noteList = noteList;
   }
   exports.NoteListView = NoteListView
 })(this)
 
 NoteListView.prototype.returnsView = function(){
   // console.log("new notelist"  + new NoteList())
-  var noteList = new NoteList()
-  var array = noteList.listOfNotes();
+  var array = this.noteList.listOfNotes();
 
   console.log(array)
+
   var before = "<ul>"
-  for (var i = 0;i< array.length;i++){
-    return  before += "<li><div>" +  array[i].text + "</div></li></ul>"
-  } 
-  
-  
+  array.forEach(function(item){
+    return before += "<li><div>" +  item.returnText() + "</div></li>"
+  })
+  return before += "</ul>"
+  console.log(before);
 }
