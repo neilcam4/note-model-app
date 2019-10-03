@@ -8,10 +8,10 @@
 
 </head>
 <body>
-  <h1>My Notes App</h1>
-
- <div id="app">hello</div>
-
+  <h1>Test Runner</h1>
+<div id="test_errors"></div>
+<div id="test_totals"></div>
+<div id="app"></div>
   <hr>
 
 </div>
@@ -24,19 +24,15 @@
 <script type="text/javascript" src = "note-list-view.js"></script>
 <script type="text/javascript" src = "note-list-model.js"></script>
   <script type = "text/javascript" src ="assert.js"></script>
-
-  <!-- <script type = "text/javascript" src ="notes-model-tests.js"></script>
+  <script type = "text/javascript" src ="colour-in.js"></script>
+  
+  <script type = "text/javascript" src ="notes-model-tests.js"></script>
   <script type = "text/javascript" src ="note-list-test.js"></script>
-  <script type = "text/javascript" src ="note-list-view-test.js"></script> -->
+  <script type = "text/javascript" src ="note-list-view-test.js"></script>
+  <script type = "text/javascript" src ="note-controller-test.js"></script>
+<script>
 
-  <script>
-    $(document).ready(function(){
-      
-        var notelist = new NoteList()
-        var note = new NoteController(notelist)
-        note.view()
-        console.log("viewed note")
-    })
-  </script>
+  $('#test_totals').append(errorLineColor());
+</script>
 </body>
 </html>
