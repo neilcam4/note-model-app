@@ -15,6 +15,10 @@
   <hr>
 
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script type = "text/javascript" src ="note-controller.js"></script>
 <script type="text/javascript" src = "note-model.js"></script>
 <script type="text/javascript" src = "note-list-view.js"></script>
@@ -25,5 +29,14 @@
   <script type = "text/javascript" src ="note-list-test.js"></script>
   <script type = "text/javascript" src ="note-list-view-test.js"></script>
 
+  <script>
+    $(document).ready(function(){
+      
+        var notelist = new NoteList()
+        var note = new NoteController(noteList)
+        note.view()
+        console.log("viewed note")
+    })
+  </script>
 </body>
 </html>

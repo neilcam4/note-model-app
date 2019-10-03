@@ -11,6 +11,7 @@ changeGreeting();
 (function(exports){
   function NoteController(NoteList){
     this.NoteList = NoteList;
+    this.NoteList.createNote("Favorite drink: Seltzer")
   }
 
   NoteController.prototype.addNote = function(text){
@@ -20,11 +21,11 @@ changeGreeting();
 
   NoteController.prototype.view = function(){
     var note = new NoteListView(this.NoteList)
-    note.returnsView()
-    return element.innerHTML = note.returnsView()
+    element.innerHTML = note.returnsView()
   }
   exports.NoteController = NoteController
 })(this)
+
 
 
 // console.log("nl = " + nl)
